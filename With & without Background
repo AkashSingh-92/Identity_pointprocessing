@@ -1,0 +1,37 @@
+clc;  %clear cmd window
+clear all;  %clear memory
+
+%f=[23 32 21 24;23 255 200 0;1 99 92 45;21 56 73 85]
+f=imread('cameraman.tif'); %read image in an matrix
+
+[row,col]=size(f)  % get size of matrix
+
+r1=10; %Pixels between these two range are made white
+r2=60;
+
+for x=1:1:row            %without background
+    for y=1:1:col
+          if r1<=f(x,y) && f(x,y)<=r2
+              g1(x,y)=255;   
+          else 
+              g1(x,y)=0;
+          end
+    end
+end
+
+for x=1:1:row            %with background
+    for y=1:1:col
+          if r1<=f(x,y) && f(x,y)<=r2
+              g2(x,y)=255;   
+          else 
+              g2(x,y)=f(x,y);
+          end
+    end
+end
+
+%g1
+%g2
+
+figure(1), imshow(f), title('original image')  %display of matrix as img
+figure(2), imshow(g1), title('Without Background image')
+figure(3), imshow(g2), title('With Background image')
