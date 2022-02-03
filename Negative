@@ -8,7 +8,7 @@ f=imread('cameraman.tif');  %read image in an matrix
 
 for x=1:1:row
     for y=1:1:col
-        g(x,y)=255-f(x,y);   % transformation
+        g(x,y)=255-f(x,y);   % Negative transformation
     end
 end
 
