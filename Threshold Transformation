@@ -1,0 +1,25 @@
+clc;  %clear cmd window
+clear all;  %clear memory
+
+%f=[23 32 21 24;23 255 200 0;1 99 92 45;21 56 73 85]
+f=imread('pout.tif'); %read image in an matrix
+
+[row,col]=size(f)  % get size of matrix
+
+r1=108; %till this original image are supposed to be dark and  gray level made 0
+
+
+for x=1:1:row
+    for y=1:1:col
+          if 0<=f(x,y) && f(x,y)<=r1
+              g(x,y)=0;   
+          else 
+              g(x,y)=255-1;
+          end
+    end
+end
+
+%g
+
+figure(1), imshow(f), title('original image')  %display of matrix as img
+figure(2), imshow(g), title('threshold image')
