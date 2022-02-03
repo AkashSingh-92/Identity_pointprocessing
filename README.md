@@ -10,4 +10,6 @@ Types:
 6. Gray level slicing
     a. with background
     b. without background
-7.Power law transformation(gamma effect)
+7. Power law transformation(gamma effect)
+8. Dynamic range comprssion(log transformation)
+9. Bit plane slicing ( to Hide information , to add water mark)
